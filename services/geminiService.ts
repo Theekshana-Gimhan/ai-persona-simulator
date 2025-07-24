@@ -84,7 +84,7 @@ export const generatePersona = async (difficulty: Difficulty, trainingScenario: 
     },
   });
 
-  const personaJson = JSON.parse(response.text);
+  const personaJson = JSON.parse(response.text || '{}');
   return personaJson as Persona;
 };
 
@@ -127,7 +127,7 @@ export const evaluateCall = async (transcript: ChatMessage[], persona: Persona, 
         },
     });
 
-    const reportJson = JSON.parse(response.text);
+    const reportJson = JSON.parse(response.text || '{}');
     return reportJson as EvaluationReport;
 };
 
@@ -161,5 +161,5 @@ export const getCallHint = async (transcript: ChatMessage[], trainingScenario: s
         }
     });
 
-    return response.text.trim();
+    return response.text ? response.text.trim() : '';
 };

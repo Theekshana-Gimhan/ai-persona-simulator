@@ -102,9 +102,10 @@ const CallView: React.FC<CallViewProps> = ({ persona, trainingScenario, onStartC
   const [isHintLoading, setIsHintLoading] = useState(false);
   const [timeLeft, setTimeLeft] = useState<number | null>(null);
 
-  const chatRef = useRef<Chat | null>(null);
+  // @ts-ignore: Chat type is provided by the Gemini SDK at runtime
+  const chatRef = useRef<any>(null);
   const isInitialized = useRef(false);
-  const { speak, isSpeaking, speakingProgress } = useSpeechSynthesis();
+  const { speak, speakingProgress } = useSpeechSynthesis();
 
   // Refs to give callbacks stable access to the latest state/props
   const statusRef = useRef(status);

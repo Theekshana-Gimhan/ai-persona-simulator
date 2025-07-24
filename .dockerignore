@@ -1,7 +1,23 @@
+# Node.js dependencies and build outputs
 node_modules
-npm-debug.log
-.env*
-.env*.local
+dist # IMPORTANT: Don't copy local build output, it's generated *inside* Dockerfile
+
+# Git
 .git
+.gitignore
+
+# IDE and editor files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Operating system files
 .DS_Store
-error.txt
+Thumbs.db
+
+# Other common exclusions
+npm-debug.log*
+yarn-error.log*
+.env
+.env.* # Crucial for security: do not commit environment variables!
