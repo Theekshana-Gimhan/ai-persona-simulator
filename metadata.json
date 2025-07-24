@@ -1,0 +1,8 @@
+{
+  "name": "AI Persona Simulator",
+  "description": "A universal training environment for professionals. Engage in mock calls with a customizable AI persona and receive detailed performance feedback based on your criteria.",
+  "requestFramePermissions": [
+    "microphone"
+  ],
+  "prompt": ""
+}
